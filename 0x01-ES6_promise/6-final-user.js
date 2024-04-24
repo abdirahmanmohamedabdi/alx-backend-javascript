@@ -7,7 +7,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     .then((res) => (
       res.map((o) => ({
         status: o.status,
-        vaule: o.status === 'fulfilled' ? o.value : String(o.reason),
+        value: o.status === 'fulfilled' ? o.value : String(o.reason),
       }))
     ));
 }

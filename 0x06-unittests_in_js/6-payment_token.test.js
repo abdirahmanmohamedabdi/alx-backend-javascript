@@ -7,7 +7,7 @@ describe("getPaymentTokenFromApi", function() {
         getPaymentTokenFromApi(true)
         .then((data) => {
             expect(data).to.have.property('data');
-            done()
+            done();
         });
     });
 });

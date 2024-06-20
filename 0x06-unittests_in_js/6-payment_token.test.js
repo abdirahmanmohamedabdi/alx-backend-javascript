@@ -5,9 +5,9 @@ const expect = require("chai").expect;
 describe("getPaymentTokenFromApi", function() {
     it("Async testing with done callback", function(done) {
         getPaymentTokenFromApi(true)
-        .then((data) => {
-            expect(data).to.have.property('data');
-            done();
+             .then((data) => {
+                 expect(data).to.have.property('data');
+                 done();
+             });
+            });
         });
-    });
-});

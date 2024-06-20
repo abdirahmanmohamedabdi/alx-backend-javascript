@@ -1,0 +1,1 @@
+Unit testing is a software testing technique in which individual units or components of a software application are tested in isolation from the rest of the system. The purpose of unit testing is to validate that each unit or piece of code works as intended and meets its specifications

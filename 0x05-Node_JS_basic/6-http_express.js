@@ -7,7 +7,7 @@ app.get('/', (request, response) => {
   response.send('Hello Holberton School!');
 });
 
-app.listrn(port, () => {
+app.listen(port, () => {
 });
 
-module.exports = app; // Export the app for testing
+module.exports = app;

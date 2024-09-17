@@ -11,7 +11,7 @@ function countStudents(fileName) {
   return new Promise((resolve, reject) => {
     readFile(fileName, (err, data) => {
       if (err) {
-        reject(Error('Cannot load the database'));
+        reject(err);
       } else {
         let output = '';
         const lines = data.toString().split('\n');
@@ -35,8 +35,8 @@ function countStudents(fileName) {
         output += `Number of students: ${l}\n`;
         for (const [key, value] of Object.entries(fields)) {
           if (key !== 'field') {
-            output += `Number of students in ${key}: ${value}.`;
-            output += ` List: ${students[key].join(', ')}\n`;
+            output += `Number of students in ${key}: ${value}. `;
+            output += `List: ${students[key].join(', ')}\n`;
           }
         }
         resolve(output);
@@ -54,7 +54,7 @@ const app = http.createServer((request, response) => {
   }
   if (request.url === '/students') {
     response.write('This is the list of our students\n');
-    countStudents(process.argv[2]).toString().then((output) => {
+    countStudents(process.argv[2].toString()).then((output) => {
       const outString = output.slice(0, -1);
       response.end(outString);
     }).catch(() => {

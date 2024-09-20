@@ -17,8 +17,8 @@ app.get('/available_payments', (request, response) => {
     response.set("Content-Type", "application/json");
     const payMethods = {
         payment_methods: {
-            credit_cards: true,
-            paypal: false
+          credit_cards: true,
+          paypal: false
         }
     }
     response.send(payMethods);

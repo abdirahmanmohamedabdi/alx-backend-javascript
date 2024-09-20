@@ -9,12 +9,18 @@ describe("Index page", function() {
     }
     it("check correct status code", function(done) {
         request(options, function(err, res, body) {
+            if (err) {
+                return done(err);
+            }
             expect(res.statusCode).to.equal(200);
             done();
-        });
     });
+});
     it("check correct content", function(done) {
         request(options, function(err, res, body) {
+           if (err) {
+               return done(err);
+           }
             expect(body).to.equal("Welcome to the payment system");
             done();
         });

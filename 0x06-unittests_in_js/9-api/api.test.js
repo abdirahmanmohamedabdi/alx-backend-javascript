@@ -15,7 +15,7 @@ describe("Index page", function() {
     });
     it("check correct content", function(done) {
         request(options, function(err, res, body) {
-            expect(body).to.contain("Welcome to the payment system");
+            expect(body).to.equal("Welcome to the payment system");
             done();
         });
     });
@@ -23,7 +23,7 @@ describe("Index page", function() {
 
 describe("Cart page", function() {
     it("check correct status code for correct url", function(done) {
-        requests.get("http://localhost:7865/cart/12", function(err, res, body) {
+        request.get("http://localhost:7865/cart/12", function(err, res, body) {
             expect(res.statusCode).to.equal(200);
             done();
         });

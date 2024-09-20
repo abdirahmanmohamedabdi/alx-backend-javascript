@@ -44,7 +44,7 @@ describe("Cart page", function() {
 
 describe("Available_payments page", function() {
     it("check correct status  for correct url", function() {
-        request.get("http://localhost:7865/available_payments", function(err, res, body) {
+        request.get("http://localhost:7865/available_payments", (err, res, body) =>{
             if (err) {
                 expect(res.statusCode).to.not.equal(200);
             } else {
@@ -88,7 +88,7 @@ describe("Login", function() {
         const opt = {
             url: "http://localhost:7865/login",
             json:true,
-            bodu: {
+            body: {
                 userName: 'JOE'
             }
         };
